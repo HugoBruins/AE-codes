@@ -52,7 +52,7 @@ double calculateNextLayer(const double& maxAltitude, const double& p_0 = 101325,
 
 int main()
 {
-    std::cout << "Standard Atmosphere Calculator made by Hugo Bruins, no copyright\n\n";
+    std::cout << "Standard Atmosphere Calculator made by Hugo Bruins\n\n";
     long long keepGoing = 1;
     while (keepGoing != 0)
     {
