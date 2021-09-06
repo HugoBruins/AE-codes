@@ -3,16 +3,13 @@
 #include <cmath>
 
 // Function to calculate the pressure with given values
-double calculatePressure(const double& p_0, const double& T_0, const double& T_1, const double& a, const double& h_1, const double& h_0) {
+double calculatePressure(const double& p_0, const double& T_0, const double& T_1, const double& a, const double& h_1, const double& h_0) 
+{
     double p_1;
     if (a != 0) 
-    {
         p_1 = p_0 * pow(T_1 / T_0, (-9.80665) / (a * 287)); 
-    }
     else 
-    {
         p_1 = p_0 * exp((-9.80665 * (h_1 - h_0) )/(287*T_0));
-    }
     std::cout << "Lapse rate:         " << a << " (K*m^-1)\n";
     std::cout << "Altitude Change:    " << h_0 << " -> " << h_1 << " (m)\n";
     std::cout << "Temperature Change: " << T_0 - 273.15 << " -> " << T_1 - 273.15<< " (C)\n";
@@ -22,7 +19,8 @@ double calculatePressure(const double& p_0, const double& T_0, const double& T_1
 }
 
 // The main juice
-double calculateNextLayer(const double& maxAltitude, const double& p_0 = 101325, const double& h_0 = 0, const double& T_0 = 288.15, const int& iteration = 0) {
+double calculateNextLayer(const double& maxAltitude, const double& p_0 = 101325, const double& h_0 = 0, const double& T_0 = 288.15, const int& iteration = 0) 
+{
     // {Altitude, Lapse rate (Kelvin per meter) for below that altitude}
     double milePoints[8][2] = 
     { 
@@ -45,9 +43,7 @@ double calculateNextLayer(const double& maxAltitude, const double& p_0 = 101325,
         return calculateNextLayer(maxAltitude, p_1, h_1, T_1, iteration + 1);
     }
     else
-    {
         return calculatePressure(p_0, T_0, T_1, a, maxAltitude, h_0);;
-    }
 }
 
 int main()
