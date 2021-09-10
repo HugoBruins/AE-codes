@@ -1,6 +1,6 @@
 <h1>Standard Atmosphere calculator</h1>
 
-For mac users: https://replit.com/@Djangovan/Hugos-ISA-Calculator#main.cpp
+<b>For mac users</b> and for people who do not like downloading things from random places: https://replit.com/@Djangovan/Hugos-ISA-Calculator#main.cpp
 
 If you give this program altitude in meters it will show you all the steps for calculating the pressure at that altitude, so you can double check your answers.
 
